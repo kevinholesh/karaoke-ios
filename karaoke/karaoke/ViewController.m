@@ -10,10 +10,14 @@
 
 @implementation ViewController
 
-@synthesize player = _player,
+@synthesize songData = _songData,
+            lines = _lines,
+            player = _player,
             songFileURL = _songFileURL,
             nowLabel = _nowLabel,
             onDeckLabel = _onDeckLabel,
+            lineIndex = _lineIndex,
+            wordIndex = _wordIndex,
             songProgress = _songProgress,
             songProgressTimer = _songProgressTimer,
             playButton = _playButton,
@@ -23,6 +27,8 @@
     [super viewDidLoad];
     
     self.playing = NO;
+    self.lineIndex = 0;
+    self.wordIndex = 0;
     
     // Set up the player
     NSString *songFilePath = [NSBundle.mainBundle pathForResource:@"prettygirl" ofType:@"mp3"];
@@ -30,6 +36,9 @@
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.songFileURL error:nil];
     
     [self updateSongProgress];
+    
+    self.songData = [LyricParser parseFromFile:[NSBundle.mainBundle pathForResource:@"prettygirl-midico" ofType:@"lrc"]];
+    self.lines = self.songData[@"lines"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +64,7 @@
     self.player.volume = 1.0;
     [self.player play];
     
-    self.songProgressTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
+    self.songProgressTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
                                                               target:self
                                                             selector:@selector(updateSongProgress)
                                                             userInfo:nil
@@ -76,6 +85,24 @@
         self.songProgress.progress = self.player.currentTime / self.player.duration;
     } else {
         self.songProgress.progress = 0.0;
+    }
+    
+    if (self.lineIndex >= self.lines.count)
+        return;
+    
+    NSArray *currentLine = [self.lines objectAtIndex:self.lineIndex];
+    if ([currentLine isEqualToArray:[NSArray array]]) {
+        NSLog(@"--- blank line ---");
+        self.lineIndex++;
+    } else if (self.wordIndex < currentLine.count) {
+        float time = [currentLine[self.wordIndex][0] floatValue];
+        if (self.player.currentTime >= time) {
+            NSLog(@"%@", currentLine[self.wordIndex][1]);
+            self.wordIndex++;
+        }
+    } else {
+        self.lineIndex++;
+        self.wordIndex = 0;
     }
 }
 
