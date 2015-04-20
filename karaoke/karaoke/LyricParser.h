@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface LyricParser : NSObject
 
 + (NSDictionary *)parseFromFile:(NSString *)path;
++ (NSString *)humanReadableLine:(NSArray *)timestampedWords;
++ (NSAttributedString *)humanReadableLine:(NSArray *)timestampedWords forIndex:(int)i;
 
 @end

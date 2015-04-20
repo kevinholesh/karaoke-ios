@@ -94,4 +94,31 @@
     return [[NSDictionary alloc] initWithDictionary:result];
 }
 
++ (NSString *)humanReadableLine:(NSArray *)timestampedWords {
+    NSString *line = @"";
+    for (NSArray *timestampedWord in timestampedWords) {
+        if (timestampedWord.count == 2) {
+            line = [line stringByAppendingString:timestampedWord[1]];
+        }
+    }
+    return line;
+}
+
++ (NSAttributedString *)humanReadableLine:(NSArray *)timestampedWords forIndex:(int)i {
+    NSDictionary *pastAttrs = @{NSForegroundColorAttributeName:UIColor.greenColor};
+    NSDictionary *futureAttrs = @{NSForegroundColorAttributeName:UIColor.blackColor};
+    
+    NSMutableAttributedString *line = [[NSMutableAttributedString alloc] init];
+    int index = 0;
+    for (NSArray *timestampedWord in timestampedWords) {
+        if (timestampedWord.count == 2) {
+            NSDictionary *attrs = index <= i ? pastAttrs : futureAttrs;
+            NSAttributedString *word = [[NSAttributedString alloc] initWithString:timestampedWord[1] attributes:attrs];
+            [line appendAttributedString:word];
+        }
+        index++;
+    }
+    return line;
+}
+
 @end
