@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "UILabel+Point.h"
 
 @implementation ViewController
 
@@ -29,14 +28,14 @@
     
     self.playing = NO;
     self.lineIndex = 1;
-    self.wordIndex = 0;
+    [self resetWordIndex];
     
     // Set up the player
-    NSString *songFilePath = [NSBundle.mainBundle pathForResource:@"prettygirl" ofType:@"mp3"];
+    NSString *songFilePath = [NSBundle.mainBundle pathForResource:@"risa" ofType:@"wav"];
     self.songFileURL = [[NSURL alloc] initFileURLWithPath:songFilePath];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.songFileURL error:nil];
     
-    self.songData = [LyricParser parseFromFile:[NSBundle.mainBundle pathForResource:@"prettygirl-midico" ofType:@"lrc"]];
+    self.songData = [LyricParser parseFromFile:[NSBundle.mainBundle pathForResource:@"risa" ofType:@"lrc"]];
     self.lines = self.songData[@"lines"];
 }
 
@@ -99,83 +98,39 @@
     if ([currentLine isEqualToArray:[NSArray array]]) {
         NSLog(@"--- blank line ---");
         self.lineIndex++;
+    } else if (self.wordIndex == -1) {
+        [self updateCurrentLine];
+        self.wordIndex = 0;
     } else if (self.wordIndex < currentLine.count) {
         float time = [currentLine[self.wordIndex][0] floatValue];
         if (self.player.currentTime >= time) {
-            NSLog(@"%@", currentLine[self.wordIndex][1]);
+//            NSLog(@"%@", currentLine[self.wordIndex][1]);
             [self updateCurrentLine];
             self.wordIndex++;
         }
-    } else {
+    } else if (self.wordIndex == currentLine.count) {
         self.lineIndex++;
-        self.wordIndex = 0;
+        self.wordIndex = -2;
+        [self performSelector:@selector(resetWordIndex) withObject:nil afterDelay:0.35];
         [self updateNextVerse];
     }
 }
 
+- (void)resetWordIndex {
+    self.wordIndex = -1;
+}
+
 - (void)updateCurrentLine {
+//    NSLog(@"updateCurrentLine %i for word %i", self.lineIndex, self.wordIndex);
     NSArray *currentLine = [self currentLine];
-//    if (self.lineIndex == 0 && self.wordIndex == 0)
+    if (self.wordIndex == -1)
         self.nowLabel.text = [LyricParser humanReadableLine:currentLine];
-//    else
-//        self.nowLabel.attributedText = [LyricParser humanReadableLine:currentLine forIndex:self.wordIndex];
-    
-    
-    NSLog(@"line starts at %f", [currentLine.firstObject[0] floatValue]);
-    
-    if (self.lineIndex+1 < self.lines.count) {
-        NSArray *nextLine = [self.lines objectAtIndex:self.lineIndex+1];
-        NSLog(@"next line starts at %f", [nextLine.firstObject[0] floatValue]);
-    } else {
-        NSLog(@"No next line");
-    }
-    
-    NSLog(@"this word starts at %@ and the the next one starts at %@")
-    
-    
-    
-    CGFloat x = [self.nowLabel xForLetterAtIndex:0];
-    self.nowLabel.textColor = [UIColor colorWithPatternImage:[self barGraphWithPercentage:(x/self.nowLabel.frame.size.width)]];;
+    else
+        self.nowLabel.attributedText = [LyricParser humanReadableLine:currentLine forIndex:self.wordIndex];
 }
 
 - (NSArray *)currentLine {
     return [self.lines objectAtIndex:self.lineIndex];
-}
-
-- (NSArray *)currentTimestampedWord {
-    NSArray *currentLine = [self currentLine];
-    return currentLine[self.wordIndex];
-}
-
-- (NSArray *)nextTimestampedWord {
-    NSArray *currentLine = [self currentLine];
-    if (self.lineIndex+1 < self.lines.count) {
-        NSArray *nextLine = [self.lines objectAtIndex:self.lineIndex+1];
-        NSLog(@"next line starts at %f", [nextLine.firstObject[0] floatValue]);
-    } else {
-        NSLog(@"No next line");
-    }
-    
-    return currentLine[self.wordIndex];
-}
-
-- (UIImage *)barGraphWithPercentage:(float)percentage {
-    CGFloat labelWidth = self.nowLabel.frame.size.width;
-    CGFloat labelHeight = self.nowLabel.frame.size.height;
-    CGRect rect = CGRectMake(0.0f, 0.0f, labelWidth, labelHeight);
-    
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, UIColor.blackColor.CGColor);
-    CGContextFillRect(context, CGRectMake(0.0f, 0.0f, labelWidth, labelHeight));
-    
-    CGContextSetFillColorWithColor(context, UIColor.greenColor.CGColor);
-    CGContextFillRect(context, CGRectMake(0.0f, 0.0f, (percentage * labelWidth), labelHeight));
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
 }
 
 - (void)updateNextVerse {

@@ -15,13 +15,10 @@
 		0A4C0BCC1AE04C8E00862DA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C0BCB1AE04C8E00862DA9 /* Images.xcassets */; };
 		0A4C0BCF1AE04C8E00862DA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C0BCD1AE04C8E00862DA9 /* LaunchScreen.xib */; };
 		0A4C0BDB1AE04C8E00862DA9 /* karaokeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C0BDA1AE04C8E00862DA9 /* karaokeTests.m */; };
-		0A4C0BE91AE04CD700862DA9 /* prettygirl-midico.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C0BE51AE04CD700862DA9 /* prettygirl-midico.lrc */; };
-		0A4C0BEA1AE04CD700862DA9 /* prettygirl.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C0BE61AE04CD700862DA9 /* prettygirl.lrc */; };
-		0A4C0BEC1AE04CD700862DA9 /* prettygirl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C0BE81AE04CD700862DA9 /* prettygirl.mp3 */; };
 		0A4C0BEE1AE051E300862DA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4C0BED1AE051E300862DA9 /* AVFoundation.framework */; };
 		0A4C0BF11AE05A8E00862DA9 /* LyricParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C0BF01AE05A8E00862DA9 /* LyricParser.m */; };
-		0A4C0BF31AE16DC600862DA9 /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C0BF21AE16DC600862DA9 /* rainbow.png */; };
-		0A4C0BF61AE1744F00862DA9 /* UILabel+Point.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C0BF51AE1744F00862DA9 /* UILabel+Point.m */; };
+		0AC7F4091AE562FD00490DDF /* risa.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7F4071AE562FD00490DDF /* risa.lrc */; };
+		0AC7F40A1AE562FD00490DDF /* risa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7F4081AE562FD00490DDF /* risa.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,15 +46,11 @@
 		0A4C0BD41AE04C8E00862DA9 /* karaokeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = karaokeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4C0BD91AE04C8E00862DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4C0BDA1AE04C8E00862DA9 /* karaokeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = karaokeTests.m; sourceTree = "<group>"; };
-		0A4C0BE51AE04CD700862DA9 /* prettygirl-midico.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "prettygirl-midico.lrc"; sourceTree = "<group>"; };
-		0A4C0BE61AE04CD700862DA9 /* prettygirl.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prettygirl.lrc; sourceTree = "<group>"; };
-		0A4C0BE81AE04CD700862DA9 /* prettygirl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = prettygirl.mp3; sourceTree = "<group>"; };
 		0A4C0BED1AE051E300862DA9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0A4C0BEF1AE05A8E00862DA9 /* LyricParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricParser.h; sourceTree = "<group>"; };
 		0A4C0BF01AE05A8E00862DA9 /* LyricParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricParser.m; sourceTree = "<group>"; };
-		0A4C0BF21AE16DC600862DA9 /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainbow.png; sourceTree = "<group>"; };
-		0A4C0BF41AE1744F00862DA9 /* UILabel+Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Point.h"; sourceTree = "<group>"; };
-		0A4C0BF51AE1744F00862DA9 /* UILabel+Point.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Point.m"; sourceTree = "<group>"; };
+		0AC7F4071AE562FD00490DDF /* risa.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = risa.lrc; sourceTree = "<group>"; };
+		0AC7F4081AE562FD00490DDF /* risa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = risa.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +105,6 @@
 				0A4C0BEF1AE05A8E00862DA9 /* LyricParser.h */,
 				0A4C0BF01AE05A8E00862DA9 /* LyricParser.m */,
 				0A4C0BBB1AE04C8E00862DA9 /* Supporting Files */,
-				0A4C0BF41AE1744F00862DA9 /* UILabel+Point.h */,
-				0A4C0BF51AE1744F00862DA9 /* UILabel+Point.m */,
 			);
 			path = karaoke;
 			sourceTree = "<group>";
@@ -148,10 +139,8 @@
 		0A4C0BE41AE04CD700862DA9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				0A4C0BF21AE16DC600862DA9 /* rainbow.png */,
-				0A4C0BE51AE04CD700862DA9 /* prettygirl-midico.lrc */,
-				0A4C0BE61AE04CD700862DA9 /* prettygirl.lrc */,
-				0A4C0BE81AE04CD700862DA9 /* prettygirl.mp3 */,
+				0AC7F4071AE562FD00490DDF /* risa.lrc */,
+				0AC7F4081AE562FD00490DDF /* risa.wav */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -236,13 +225,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A4C0BE91AE04CD700862DA9 /* prettygirl-midico.lrc in Resources */,
+				0AC7F40A1AE562FD00490DDF /* risa.wav in Resources */,
 				0A4C0BCA1AE04C8E00862DA9 /* Main.storyboard in Resources */,
 				0A4C0BCF1AE04C8E00862DA9 /* LaunchScreen.xib in Resources */,
-				0A4C0BF31AE16DC600862DA9 /* rainbow.png in Resources */,
+				0AC7F4091AE562FD00490DDF /* risa.lrc in Resources */,
 				0A4C0BCC1AE04C8E00862DA9 /* Images.xcassets in Resources */,
-				0A4C0BEC1AE04CD700862DA9 /* prettygirl.mp3 in Resources */,
-				0A4C0BEA1AE04CD700862DA9 /* prettygirl.lrc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +250,6 @@
 				0A4C0BC11AE04C8E00862DA9 /* AppDelegate.m in Sources */,
 				0A4C0BBE1AE04C8E00862DA9 /* main.m in Sources */,
 				0A4C0BF11AE05A8E00862DA9 /* LyricParser.m in Sources */,
-				0A4C0BF61AE1744F00862DA9 /* UILabel+Point.m in Sources */,
 				0A4C0BC71AE04C8E00862DA9 /* ViewController.m in Sources */,
 				0A4C0BC41AE04C8E00862DA9 /* karaoke.xcdatamodeld in Sources */,
 			);
