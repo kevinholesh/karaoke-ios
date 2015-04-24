@@ -31,11 +31,17 @@
     [self resetWordIndex];
     
     // Set up the player
-    NSString *songFilePath = [NSBundle.mainBundle pathForResource:@"risa" ofType:@"wav"];
+//    NSString *songFilePath = [NSBundle.mainBundle pathForResource:@"risa" ofType:@"wav"];
+//    NSString *songFilePath = [NSBundle.mainBundle pathForResource:@"band" ofType:@"wav"];
+//    NSString *songFilePath = [NSBundle.mainBundle pathForResource:@"teegan" ofType:@"wav"];
+    NSString *songFilePath = [NSBundle.mainBundle pathForResource:@"viv" ofType:@"wav"];
     self.songFileURL = [[NSURL alloc] initFileURLWithPath:songFilePath];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.songFileURL error:nil];
     
-    self.songData = [LyricParser parseFromFile:[NSBundle.mainBundle pathForResource:@"risa" ofType:@"lrc"]];
+//    self.songData = [LyricParser parseFromFile:[NSBundle.mainBundle pathForResource:@"risa" ofType:@"lrc"]];
+//    self.songData = [LyricParser parseFromFile:[NSBundle.mainBundle pathForResource:@"band" ofType:@"lrc"]];
+//    self.songData = [LyricParser parseFromFile:[NSBundle.mainBundle pathForResource:@"teegan" ofType:@"lrc"]];
+    self.songData = [LyricParser parseFromFile:[NSBundle.mainBundle pathForResource:@"viv" ofType:@"lrc"]];
     self.lines = self.songData[@"lines"];
 }
 

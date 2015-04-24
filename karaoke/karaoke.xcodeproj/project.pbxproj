@@ -17,6 +17,12 @@
 		0A4C0BDB1AE04C8E00862DA9 /* karaokeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C0BDA1AE04C8E00862DA9 /* karaokeTests.m */; };
 		0A4C0BEE1AE051E300862DA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4C0BED1AE051E300862DA9 /* AVFoundation.framework */; };
 		0A4C0BF11AE05A8E00862DA9 /* LyricParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C0BF01AE05A8E00862DA9 /* LyricParser.m */; };
+		0A564B501AEA96D2002EA1F9 /* band.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 0A564B4A1AEA96D2002EA1F9 /* band.lrc */; };
+		0A564B511AEA96D2002EA1F9 /* band.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A564B4B1AEA96D2002EA1F9 /* band.wav */; };
+		0A564B521AEA96D2002EA1F9 /* teegan.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 0A564B4C1AEA96D2002EA1F9 /* teegan.lrc */; };
+		0A564B531AEA96D2002EA1F9 /* teegan.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A564B4D1AEA96D2002EA1F9 /* teegan.wav */; };
+		0A564B541AEA96D2002EA1F9 /* viv.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 0A564B4E1AEA96D2002EA1F9 /* viv.lrc */; };
+		0A564B551AEA96D2002EA1F9 /* viv.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A564B4F1AEA96D2002EA1F9 /* viv.wav */; };
 		0AC7F4091AE562FD00490DDF /* risa.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7F4071AE562FD00490DDF /* risa.lrc */; };
 		0AC7F40A1AE562FD00490DDF /* risa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7F4081AE562FD00490DDF /* risa.wav */; };
 /* End PBXBuildFile section */
@@ -49,6 +55,12 @@
 		0A4C0BED1AE051E300862DA9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0A4C0BEF1AE05A8E00862DA9 /* LyricParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricParser.h; sourceTree = "<group>"; };
 		0A4C0BF01AE05A8E00862DA9 /* LyricParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricParser.m; sourceTree = "<group>"; };
+		0A564B4A1AEA96D2002EA1F9 /* band.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = band.lrc; sourceTree = "<group>"; };
+		0A564B4B1AEA96D2002EA1F9 /* band.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = band.wav; sourceTree = "<group>"; };
+		0A564B4C1AEA96D2002EA1F9 /* teegan.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = teegan.lrc; sourceTree = "<group>"; };
+		0A564B4D1AEA96D2002EA1F9 /* teegan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = teegan.wav; sourceTree = "<group>"; };
+		0A564B4E1AEA96D2002EA1F9 /* viv.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = viv.lrc; sourceTree = "<group>"; };
+		0A564B4F1AEA96D2002EA1F9 /* viv.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = viv.wav; sourceTree = "<group>"; };
 		0AC7F4071AE562FD00490DDF /* risa.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = risa.lrc; sourceTree = "<group>"; };
 		0AC7F4081AE562FD00490DDF /* risa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = risa.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +151,12 @@
 		0A4C0BE41AE04CD700862DA9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0A564B4A1AEA96D2002EA1F9 /* band.lrc */,
+				0A564B4B1AEA96D2002EA1F9 /* band.wav */,
+				0A564B4C1AEA96D2002EA1F9 /* teegan.lrc */,
+				0A564B4D1AEA96D2002EA1F9 /* teegan.wav */,
+				0A564B4E1AEA96D2002EA1F9 /* viv.lrc */,
+				0A564B4F1AEA96D2002EA1F9 /* viv.wav */,
 				0AC7F4071AE562FD00490DDF /* risa.lrc */,
 				0AC7F4081AE562FD00490DDF /* risa.wav */,
 			);
@@ -226,8 +244,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC7F40A1AE562FD00490DDF /* risa.wav in Resources */,
+				0A564B551AEA96D2002EA1F9 /* viv.wav in Resources */,
 				0A4C0BCA1AE04C8E00862DA9 /* Main.storyboard in Resources */,
+				0A564B511AEA96D2002EA1F9 /* band.wav in Resources */,
+				0A564B541AEA96D2002EA1F9 /* viv.lrc in Resources */,
+				0A564B501AEA96D2002EA1F9 /* band.lrc in Resources */,
 				0A4C0BCF1AE04C8E00862DA9 /* LaunchScreen.xib in Resources */,
+				0A564B521AEA96D2002EA1F9 /* teegan.lrc in Resources */,
+				0A564B531AEA96D2002EA1F9 /* teegan.wav in Resources */,
 				0AC7F4091AE562FD00490DDF /* risa.lrc in Resources */,
 				0A4C0BCC1AE04C8E00862DA9 /* Images.xcassets in Resources */,
 			);
